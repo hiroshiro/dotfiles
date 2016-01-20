@@ -11,14 +11,15 @@ echo "Tests started at..."
 date "+%H:%M:%S"
 
 # GC customizations
-export RUBY_GC_MALLOC_LIMIT=79000000
+export RUBY_GC_MALL_LIMIT=79000000
 export RUBY_HEAP_MIN_SLOTS=800000
 export RUBY_HEAP_FREE_MIN=100000
 export RUBY_HEAP_SLOTS_INCREMENT=400000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 
 # setup environment
-export RAILS_ROOT=$(cd "$(dirname $0)"/.. && pwd)
+RAILS_ROOT="$(cd "$(dirname "$0")"/.. && pwd)"
+export RAILS_ROOT
 export RAILS_ENV="test"
 export RACK_ROOT="$RAILS_ROOT"
 export RACK_ENV="$RAILS_ENV"

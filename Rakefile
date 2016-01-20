@@ -1,7 +1,7 @@
 require 'rake'
 require 'rspec/core/rake_task'
 
-task :spec    => 'spec:all'
+task :test    => 'spec:all'
 task :default => :spec
 
 namespace :spec do

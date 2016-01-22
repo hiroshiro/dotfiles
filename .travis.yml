@@ -4,4 +4,5 @@ install:
   - dpkg -x shellcheck_0.3.7-5_amd64.deb shellcheck/
 script:
   - shellcheck/usr/bin/shellcheck script/*
+  - ruby --version
 sudo: false

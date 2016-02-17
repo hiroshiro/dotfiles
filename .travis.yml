@@ -1,7 +1,7 @@
 language: bash
 before_install:
-	- sudo apt-get update -qq
-	- sudo apt-get install -qq build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 	- rvm install 2.1.8
 install:
   - wget http://ftp.debian.org/debian/pool/main/s/shellcheck/shellcheck_0.3.7-5_amd64.deb

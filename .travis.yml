@@ -5,4 +5,4 @@ install:
 script:
   - shellcheck/usr/bin/shellcheck script/*
   - script/*
-sudo: false
+sudo: required

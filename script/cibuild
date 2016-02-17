@@ -24,6 +24,10 @@ export RAILS_ENV="test"
 export RACK_ROOT="$RAILS_ROOT"
 export RACK_ENV="$RAILS_ENV"
 
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
 test -d "/usr/share/rbenv/shims" && {
   export PATH=/usr/share/rbenv/shims:$PATH
 }

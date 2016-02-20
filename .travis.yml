@@ -8,5 +8,7 @@ install:
   - dpkg -x shellcheck_0.3.7-5_amd64.deb shellcheck/
 script:
   - shellcheck/usr/bin/shellcheck script/*
-  - script/*
+  - script/cibuild
+  - script/bootstrap
+  - script/setup
 sudo: true

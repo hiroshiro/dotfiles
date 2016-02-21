@@ -28,6 +28,8 @@ echo 'ruby-build' >> Brewfile
 fi
 
 if [  -f "Brewfile" ] && [ "$(uname -s)" = "Linux" ] && [ -e "/etc/lsb-release" ]; then
+
+echo "$PATH"
   brew update
 
   brew bundle check >/dev/null 2>&1  || {
@@ -61,4 +63,3 @@ if [ -f "Gemfile" ]; then
   }
 fi
 
-echo $PATH

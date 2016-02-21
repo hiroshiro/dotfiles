@@ -60,3 +60,5 @@ if [ -f "Gemfile" ]; then
     bundle install --path vendor/gems --quiet --without production --binstubs
   }
 fi
+
+echo $PATH

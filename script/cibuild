@@ -24,9 +24,7 @@ export RAILS_ENV="test"
 export RACK_ROOT="$RAILS_ROOT"
 export RACK_ENV="$RAILS_ENV"
 
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+export PATH=/usr/local/bin:$PATH
 
 test -d "/usr/share/rbenv/shims" && {
   export PATH=/usr/share/rbenv/shims:$PATH
@@ -34,6 +32,11 @@ test -d "/usr/share/rbenv/shims" && {
 export RBENV_VERSION="2.1.6"
 
 export PATH="$RACK_ROOT/bin:$PATH"
+
+# linuxbrew
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 # run tests
 echo "Running tests ..."

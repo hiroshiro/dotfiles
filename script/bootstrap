@@ -13,8 +13,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/linuxbrew/go/i
 </dev/null
 
 touch Brewfile
-echo 'rbenv' >> Brewfile
-echo 'ruby-build' >> Brewfile
+echo "brew 'rbenv'" >> Brewfile
+echo "brew 'ruby-build'" >> Brewfile
+cat Brewfile
 
 fi
 
@@ -25,6 +26,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 touch Brewfile
 echo "brew 'rbenv'" >> Brewfile
 echo "brew 'ruby-build'" >> Brewfile
+cat Brewfile
 fi
 
 if [  -f "Brewfile" ] && [ "$(uname -s)" = "Linux" ] && [ -e "/etc/lsb-release" ]; then

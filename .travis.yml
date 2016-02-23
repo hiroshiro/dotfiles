@@ -9,6 +9,4 @@ install:
 script:
   - shellcheck/usr/bin/shellcheck script/*
   - script/cibuild
-  - script/bootstrap
-  - script/setup
 sudo: true

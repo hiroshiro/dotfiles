@@ -18,14 +18,7 @@ fi
 
 if [  -f "Brewfile" ]; then
     os/"$OS"/brew/install.sh
-
-    echo "$PATH"
-  brew update
-
-  brew bundle check >/dev/null 2>&1  || {
-    echo "==> Installing Homebrew dependencies…"
-    brew bundle
-  }
+    os/"$OS"/brew/bundle.sh
 fi
 
 if [ -f ".ruby-version" ] && [ -z "$(rbenv version-name 2>/dev/null)" ]; then

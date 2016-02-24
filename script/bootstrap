@@ -9,14 +9,15 @@ cd "$(dirname "$0")/.."
 
 source 'shell/utils.sh'  || exit 1
 
-declare -r OS="$(get_os)"
+declare -r OS
+OS="$(get_os)"
 
 if [ ! -f "Brewfile" ]; then
-    cat os/$OS/brew/Brewfile > Brewfile
+    cat os/"$OS"/brew/Brewfile > Brewfile
 fi
 
 if [  -f "Brewfile" ]; then
-    os/$OS/brew/install.sh
+    os/"$OS"/brew/install.sh
 
     echo "$PATH"
   brew update

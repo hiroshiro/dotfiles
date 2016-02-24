@@ -7,41 +7,18 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-if [ ! -f "Brewfile" ] && [ "$(uname -s)" = "Linux" ] && [ -e "/etc/lsb-release" ]; then
+source 'shell/utils.sh'  || exit 1
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/linuxbrew/go/install)" \
-</dev/null
+declare -r OS="$(get_os)"
 
-touch Brewfile
-echo "brew 'rbenv'" >> Brewfile
-echo "brew 'ruby-build'" >> Brewfile
-cat Brewfile
-
+if [ ! -f "Brewfile" ]; then
+    cat os/$OS/brew/Brewfile > Brewfile
 fi
 
-if [ ! -f "Brewfile" ] && [ "$(uname -s)" = "Darwin" ]; then
+if [  -f "Brewfile" ]; then
+    os/$OS/brew/install.sh
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" \
-</dev/null
-
-touch Brewfile
-echo "brew 'rbenv'" >> Brewfile
-echo "brew 'ruby-build'" >> Brewfile
-cat Brewfile
-fi
-
-if [  -f "Brewfile" ] && [ "$(uname -s)" = "Linux" ] && [ -e "/etc/lsb-release" ]; then
-
-echo "$PATH"
-  brew update
-
-  brew bundle check >/dev/null 2>&1  || {
-    echo "==> Installing Homebrew dependencies…"
-    brew bundle
-  }
-fi
-
-if [ -f "Brewfile" ] && [ "$(uname -s)" = "Darwin" ]; then
+    echo "$PATH"
   brew update
 
   brew bundle check >/dev/null 2>&1  || {

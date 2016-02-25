@@ -29,7 +29,7 @@ export PATH=/usr/local/bin:$PATH
 test -d "/usr/share/rbenv/shims" && {
   export PATH=/usr/share/rbenv/shims:$PATH
 }
-export RBENV_VERSION="2.1.6"
+export RBENV_VERSION="2.3.0"
 
 export PATH="$RACK_ROOT/bin:$PATH"
 

@@ -21,6 +21,10 @@ if [  -f "Brewfile" ]; then
     os/"$OS"/brew/bundle.sh
 fi
 
+if [ ! -f ".ruby-version" ] ; then
+    cat os/"$OS"/rbenv/.ruby-version > .ruby-version
+fi
+
 if [ -f ".ruby-version" ] && [ -z "$(rbenv version-name 2>/dev/null)" ]; then
   echo "==> Installing Ruby…"
   rbenv install --skip-existing

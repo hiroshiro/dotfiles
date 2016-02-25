@@ -5,11 +5,11 @@ os:
   - osx
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev cabal-install ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo port install hs-cabal-install ; fi
   - cabal install shellcheck
-  - rvm install 2.1.8
 install:
-
+  - rvm install 2.1.8
 script:
   - shellcheck script/*
   - script/cibuild

@@ -9,8 +9,8 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev ; fi
 install:
   - cabal install shellcheck
-  - cabal install --only-dependencies --enable-tests
 script:
-  - cabal configure --enable-tests -fFOO && cabal build && shellcheck script/*
+  - cabal configure --enable-tests -fFOO && cabal build && cabal test
+  - shellcheck script/*
   - script/cibuild
 sudo: true

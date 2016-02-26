@@ -3,6 +3,6 @@
 brew update
 
 brew bundle check >/dev/null 2>&1  || {
-  echo "==> Installing Linuxbrew dependencies…"
+  echo "==> Installing Homebrew dependencies…"
   brew bundle
 }

@@ -1,16 +1,14 @@
-language: haskell
+language: bash
 os:
   - linux
   - osx
-ghc:
-  - 7.8
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev ; fi
-install:
-  - cabal install shellcheck
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget http://ftp.debian.org/debian/pool/main/s/shellcheck/shellcheck_0.3.7-5_amd64.deb ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then dpkg -x shellcheck_0.3.7-5_amd64.deb shellcheck/ ; fi
 script:
-  - cabal configure --enable-tests -fFOO && cabal build && cabal test
-  - shellcheck script/*
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then shellcheck/usr/bin/shellcheck script/* ; fi
   - script/cibuild
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then shellcheck script/* ; fi
 sudo: true

@@ -1,4 +1,4 @@
-language: bash
+language: haskell
 os:
   - linux
   - osx
@@ -7,11 +7,10 @@ ghc:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev ; fi
-script:
-  - cabal configure --enable-tests -fFOO && cabal build && cabal test
 install:
   - cabal install shellcheck
+  - cabal install --only-dependencies --enable-tests
 script:
-  - shellcheck script/*
+  - cabal configure --enable-tests -fFOO && cabal build && shellcheck script/*
   - script/cibuild
 sudo: true

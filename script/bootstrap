@@ -7,6 +7,7 @@ set -e
 
 cd "$(dirname "$0")/.."
 
+# utility functions
 source 'shell/utils.sh'  || exit 1
 
 declare OS

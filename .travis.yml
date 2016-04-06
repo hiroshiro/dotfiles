@@ -13,3 +13,4 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then shellcheck/usr/bin/shellcheck script/* ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then shellcheck -x script/* ; fi
 sudo: true
+install: travis_wait mvn install

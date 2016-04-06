@@ -13,6 +13,7 @@ source 'shell/utils.sh'  || exit 1
 declare OS
 OS="$(get_os)"
 
+# install brew
 if [ ! -f "Brewfile" ]; then
     cat os/"$OS"/brew/Brewfile > Brewfile
 fi
@@ -22,6 +23,7 @@ if [  -f "Brewfile" ]; then
     os/"$OS"/brew/bundle.sh
 fi
 
+# install rbenv
 if [ ! -f ".ruby-version" ] ; then
     cat os/"$OS"/rbenv/.ruby-version > .ruby-version
 fi
@@ -33,6 +35,11 @@ if [ -f ".ruby-version" ] && [ -z "$(rbenv version-name 2>/dev/null)" ]; then
     gem install bundler
     rbenv rehash
   }
+fi
+
+# install gem
+if [ ! -f "Gemfile" ]; then
+    cat os/"$OS"/gem/Gemfile > Gemfile
 fi
 
 if [ -f "Gemfile" ]; then

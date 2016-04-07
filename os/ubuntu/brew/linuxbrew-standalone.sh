@@ -22,7 +22,7 @@ if [ ! -d "$HOME/.linuxbrew" ]; then
   brew doctor || true
 fi
 brew install gcc --with-glibc
-brew install git
+brew install git -dv
 brew tap homebrew/dupes
 brew install coreutils findutils gawk gnu-sed gnu-which grep make ruby
 PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin

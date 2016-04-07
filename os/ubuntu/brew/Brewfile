@@ -1,2 +1,4 @@
+brew 'readline'
+brew 'openssl'
 brew 'rbenv'
 brew 'ruby-build'

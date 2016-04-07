@@ -1,3 +1,3 @@
 #!/bin/bash
 
-os/ubuntu/brew/Linuxbrew-standalone.sh
+os/ubuntu/brew/linuxbrew-standalone.sh

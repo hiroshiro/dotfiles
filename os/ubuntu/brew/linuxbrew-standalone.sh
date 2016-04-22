@@ -11,7 +11,7 @@ if [ ! -d "/usr/lib64" ]; then
 fi
 sudo apt-get update -y
 sudo apt-get update --fix-missing -y
-sudo apt-get install build-essential curl g++ git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev gawk make patch tcl -y
+sudo apt-get install  -qq build-essential curl git m4 python-setuptools ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 
 unset LD_LIBRARY_PATH PKG_CONFIG_PATH HOMEBREW_CC
 PATH=$HOME/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
@@ -21,9 +21,3 @@ if [ ! -d "$HOME/.linuxbrew" ]; then
   # note that even if brew doctor is a little unhappy we want to keep going
   brew doctor || true
 fi
-brew install gcc --with-glibc
-brew install git -dv
-brew tap homebrew/dupes
-brew install coreutils findutils gawk gnu-sed gnu-which grep make ruby
-PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin
-brew install hello && brew test hello; brew remove hello

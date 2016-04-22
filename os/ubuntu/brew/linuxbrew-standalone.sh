@@ -21,4 +21,5 @@ if [ ! -d "$HOME/.linuxbrew" ]; then
   # note that even if brew doctor is a little unhappy we want to keep going
   brew doctor || true
   brew install ruby
+  brew install gcc --with-glibc
 fi

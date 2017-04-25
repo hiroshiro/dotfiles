@@ -1,3 +1,4 @@
+brew 'gcc'
 brew 'readline'
 brew 'openssl'
 brew 'rbenv'

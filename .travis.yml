@@ -3,7 +3,7 @@ os:
   - linux
   - osx
 script:
-  - travis_wait 30 script/cibuild
+  - script/cibuild
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then shellcheck -x script/* ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then shellcheck -x script/* ; fi
 sudo: required

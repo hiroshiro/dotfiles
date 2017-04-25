@@ -9,4 +9,4 @@ script:
   - travis_wait 30 script/cibuild
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then shellcheck/usr/bin/shellcheck script/* ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then shellcheck -x script/* ; fi
-sudo: true
+sudo: required

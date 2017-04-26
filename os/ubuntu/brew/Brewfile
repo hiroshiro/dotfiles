@@ -1,6 +1,3 @@
-brew 'gcc'
-brew 'readline'
-brew 'openssl'
-brew 'rbenv'
-brew 'ruby-build'
 brew 'shellcheck'
+brew 'rbenv' args: ['--HEAD']
+brew 'ruby-build' args: ['--HEAD']

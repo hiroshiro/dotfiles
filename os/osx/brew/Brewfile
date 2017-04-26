@@ -1,3 +1,3 @@
 brew 'shellcheck'
 brew 'rbenv'
-brew 'ruby-build' args: ['--HEAD']
+brew 'ruby-build', args: ['--HEAD']
